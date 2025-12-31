@@ -17,3 +17,4 @@ flask-cors
 gunicorn
 flask-dance
 sentry_sdk
+playwright
