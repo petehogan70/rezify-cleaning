@@ -228,7 +228,7 @@ def is_workday_job_expired(url: str, timeout=60):
 
         # Search for the postingAvailable flag in the HTML, and return the result accordingly
         if not resp.text:
-            return "unknown", "No HTML content"
+            return "unknown", "Workday.com custom cleaning: No HTML content"
 
         m = re.search(
             r'postingAvailable"\s*:\s*(true|false)|postingAvailable\s*:\s*(true|false)',
@@ -237,17 +237,17 @@ def is_workday_job_expired(url: str, timeout=60):
         )
 
         if not m:  # Flag not found
-            return "unknown", "postingAvailable flag not found"
+            return "unknown", "Workday.com custom cleaning: response tag postingAvailable flag not found"
 
         if (m.group(1) or m.group(2)).lower() == "true":
-            return "active", "Workday postingAvailable=true"
+            return "active", "Workday.com custom cleaning: response tag postingAvailable=true"
         elif (m.group(1) or m.group(2)).lower() == "false":
-            return "expired", "Workday postingAvailable=false"
+            return "expired", "Workday.com custom cleaning: response tag postingAvailable=false"
         else:
-            return "unknown", "postingAvailable flag unrecognized"
+            return "unknown", "Workday.com custom cleaning: response tag postingAvailable flag unrecognized"
 
     except Exception as e:
-        return "unknown", f"Error in workday cleaning: {type(e).__name__}: {e}"
+        return "unknown", f"Error in workday.com custom cleaning: {type(e).__name__}: {e}"
 
 
 # Greenhouse expired detector
@@ -257,18 +257,18 @@ def is_job_expired_greenhouse(url: str, timeout=60):
     """
     try:
         if 'error=true' in url:
-            return 'expired', "Greenhouse URL with error=true"
+            return 'expired', "Greenhouse link redirected with error=true present"
 
         resp = requests.get(url, allow_redirects=False, timeout=timeout)
 
         if 'location' in resp.headers:
             if 'error=true' in resp.headers['location']:
-                return 'expired', "Greenhouse redirect with error=true"
+                return 'expired', "Greenhouse.io custom cleaning: link redirected with error=true present"
 
-        return 'active', "Greenhouse job active, no error redirect"
+        return 'active', "Greenhouse.io custom cleaning: link did not redirect with error=true, meaning the job is active"
 
     except Exception as e:
-        return 'unknown', f"Error in greenhouse cleaning: {type(e).__name__}: {e}"
+        return 'unknown', f"Error in greenhouse.io custom cleaning cleaning: {type(e).__name__}: {e}"
 
 
 # Redirect expired detector
@@ -281,9 +281,10 @@ def is_job_expired_redirect(url: str, source: str, timeout=60):
         resp = requests.get(url, allow_redirects=True, timeout=timeout)
 
         if resp.url != url:
-            return 'expired', f"{source} redirect detected"
+            return 'expired', (f"{source} redirect detected, meaning job is expired. Custom testing indicates that"
+                               f" {source} always redirects on expired jobs.")
         else:
-            return 'active', f"{source} job active, no redirect"
+            return 'active', f"{source} did not redirect, meaning job is active. Custom testing indicates that {source} always redirects on expired jobs."
 
     except Exception as e:
         return 'unknown', f"Error in {source} redirect cleaning: {type(e).__name__}: {e}"
@@ -310,16 +311,16 @@ def is_ultipro_job_expired(url: str, timeout=60):
         )
 
         if not resp.text:
-            return "unknown", "No HTML content"
+            return "unknown", "Ultipro.com custom cleaning: No HTML content for Ultipro job"
 
         # Search for the OpportunityUnavailable flag in the HTML, and return the result accordingly
         if 'Opportunity.OpportunityError.OpportunityUnavailableMessage' in resp.text:
-            return "expired", "Ultipro OpportunityUnavailableMessage found"
+            return "expired", "Ultipro.com custom cleaning: OpportunityUnavailableMessage found in HTML response, indicating expired job"
         else:
-            return "active", "Ultipro job active, no OpportunityUnavailableMessage"
+            return "active", "Ultipro.com custom cleaning: job active, OpportunityUnavailableMessage not found in HTML response"
 
     except Exception as e:
-        return "unknown", f"Error in Ultipro cleaning: {type(e).__name__}: {e}"
+        return "unknown", f"Error in Ultipro.com custom cleaning: {type(e).__name__}: {e}"
 
 
 def is_oracle_job_expired(url: str, timeout_ms: int = 15000):
@@ -375,7 +376,7 @@ def is_oracle_job_expired(url: str, timeout_ms: int = 15000):
 
         end_time = datetime.now(timezone.utc)
         elapsed = (end_time - start_time).total_seconds()
-        return 'active', f"no_job-expired_console_signal"
+        return 'active', f"Oraclecloud custom cleaning: job-expired not found in console/pageerror logs, indicating active job"
 
     except Exception as e:
         err_str = str(e)
@@ -401,15 +402,14 @@ def is_job_expired_icims(url: str, timeout=60):
                 "Accept-Language": "en-US,en;q=0.9",
             },
         )
-        # print(f"RESPONSE HTML: {resp.text}")
 
         if resp.status_code in (404, 410):
-            return 'expired', f"HTTP {resp.status_code}"
+            return 'expired', f"iCIMS.com custom cleaning: HTTP {resp.status_code}, meaning job is expired"
         else:
-            return 'active', f"HTTP {resp.status_code}"
+            return 'active', f"iCIMS.com custom cleaning: HTTP {resp.status_code}, meaning job is active"
 
     except Exception as e:
-        return 'unknown', f"Error in iCIMS cleaning: {type(e).__name__}: {e}"
+        return 'unknown', f"Error in iCIMS.com custom cleaning: {type(e).__name__}: {e}"
 
 
 def is_job_expired_dayforce(url: str, timeout: int = 60):
@@ -429,7 +429,7 @@ def is_job_expired_dayforce(url: str, timeout: int = 60):
         )
 
         if not resp.text:
-            return "unknown", "Dayforce jobData not found"
+            return "unknown", "DayforceHCM jobData not found"
         else:
             html = resp.text
 
@@ -452,13 +452,13 @@ def is_job_expired_dayforce(url: str, timeout: int = 60):
                 next_json_text = m.group(1)
 
         if not next_json_text:
-            return "unknown", "Dayforce jobData not found"
+            return "unknown", "DayforceHCM jobData not found"
 
         # 3) Parse JSON
         try:
             data = json.loads(next_json_text)
         except Exception:
-            return "unknown", "Dayforce jobData not found"
+            return "unknown", "DayforceHCM jobData not found"
 
         # 4) Pull jobData
         page_props = (data.get("props") or {}).get("pageProps") or {}
@@ -475,7 +475,7 @@ def is_job_expired_dayforce(url: str, timeout: int = 60):
                     break
 
         if not isinstance(job_data, dict) or not job_data:
-            return "unknown", "Dayforce jobData not found"
+            return "unknown", "DayforceHCM jobData not found"
 
         posting_status = job_data.get("postingStatus") or ""
         postingExpiryTimestampUTC = job_data.get("postingExpiryTimestampUTC") or None
@@ -484,15 +484,15 @@ def is_job_expired_dayforce(url: str, timeout: int = 60):
             posting_expiry = datetime.fromisoformat(postingExpiryTimestampUTC)
             now_utc = datetime.now(timezone.utc)
             if now_utc > posting_expiry:
-                return 'expired', "Dayforce postingExpiryTimestampUTC in the past"
+                return 'expired', "DayforceHCM custom cleaning: postingExpiryTimestampUTC in the past, meaning job is expired"
         else:
             if posting_status != 1:
-                return 'expired', "Dayforce postingStatus indicates closed"
+                return 'expired', "DayforceHCM custom cleaning: postingStatus indicates closed, meaning job is expired"
 
-        return 'active', "Dayforce job active based on postingExpiryTimestampUTC and postingStatus"
+        return 'active', "DayforceHCM custom cleaning: job active based on postingExpiryTimestampUTC and postingStatus"
 
     except Exception as e:
-        return "unknown", f"Error in Dayforce cleaning: {type(e).__name__}: {e}"
+        return "unknown", f"Error in DayforceHCM custom cleaning: {type(e).__name__}: {e}"
 
 
 def is_job_expired_taleo(url: str, timeout: int = 60):
@@ -516,7 +516,7 @@ def is_job_expired_taleo(url: str, timeout: int = 60):
 
         html = resp.text or ""
         if not html.strip():
-            return "unknown", "Empty response body"
+            return "unknown", "Talea custom cleaning: Empty response body"
 
         # --- Build a visible-text view (helps catch plain phrases) ---
         soup = BeautifulSoup(html, "html.parser")
@@ -534,7 +534,7 @@ def is_job_expired_taleo(url: str, timeout: int = 60):
         ]
         for p in phrase_signals:
             if p in visible_text:
-                return "expired", f"Taleo unavailable phrase found: '{p}'"
+                return "expired", f"Taleo custom cleaning: unavailable phrase found in response: '{p}'"
 
         # --- Script/JS signals specific to Taleo _ftl object ---
         # Instead of parsing JS fully, we search for robust markers.
@@ -542,7 +542,7 @@ def is_job_expired_taleo(url: str, timeout: int = 60):
 
         # 1) Interface set differs: unavailable has requisitionUnavailableInterface
         if "requisitionunavailableinterface" in html_lower:
-            return "expired", "Taleo interface indicates requisitionUnavailableInterface"
+            return "expired", "Taleo custom cleaning: interface indicates requisitionUnavailableInterface - meaning expired job"
 
         # 2) Available job pages typically have requisitionDescriptionInterface + descRequisition list
         has_desc_interface = "requisitiondescriptioninterface" in html_lower
@@ -553,22 +553,22 @@ def is_job_expired_taleo(url: str, timeout: int = 60):
         if m_ints:
             ints_blob = m_ints.group(1)
             if "requisitionunavailableinterface" in ints_blob:
-                return "expired", "Taleo _ints includes requisitionUnavailableInterface"
+                return "expired", "Taleo custom cleaning: _ints includes requisitionUnavailableInterface - meaning expired job"
             if "requisitiondescriptioninterface" in ints_blob:
                 # if it explicitly includes description interface, that's a good sign
                 pass
 
         # If it looks like a real job detail page, call it active.
         if has_desc_interface and has_desc_list:
-            return "active", "Taleo requisitionDescriptionInterface/descRequisition detected"
+            return "active", "Taleo custom cleaning: requisitionDescriptionInterface/descRequisition detected- meaning active job"
 
         # If we can't confidently decide, return unknown
-        return "unknown", "Could not confidently classify Taleo page"
+        return "unknown", "Taleo custom cleaning: Could not confidently classify Taleo page"
 
     except requests.Timeout:
-        return "unknown", f"Taleo request timed out after {timeout}s"
+        return "unknown", f"Taleo custom cleaning: request timed out after {timeout}s"
     except Exception as e:
-        return "unknown", f"Error in Taleo cleaning: {type(e).__name__}: {e}"
+        return "unknown", f"Error in Taleo custom cleaning: {type(e).__name__}: {e}"
 
 
 # ============================================================
@@ -635,12 +635,12 @@ def is_job_expired_playwright(url: str, timeout_ms: int = 60000):
                     browser.close()
                     end_time = datetime.now(timezone.utc)
                     elapsed = (end_time - start_time).total_seconds()
-                    return 'expired', f"Playwright - Pattern found: {pat}"
+                    return 'expired', f"Playwright: Job is expired because the following pattern was found: {pat}"
 
             end_time = datetime.now(timezone.utc)
             elapsed = (end_time - start_time).total_seconds()
             browser.close()
-            return 'active', f"Playwright - No closed patterns found"
+            return 'active', f"Playwright: No closed patterns found, job is active"
 
     except Exception as e:
         err_str = str(e)
@@ -691,11 +691,12 @@ def is_job_expired_request_text(url: str, timeout: int = 60):
             if re.search(pat, visible_text):
                 end_time = datetime.now(timezone.utc)
                 elapsed = (end_time - start_time).total_seconds()
-                return 'expired', f"Request text - Pattern found: {pat}"
+                return 'expired', (f"The job is deemed expired because the following pattern was found: {pat}. This came "
+                                   f"from the HTML request text, playwright was not used.")
 
         end_time = datetime.now(timezone.utc)
         elapsed = (end_time - start_time).total_seconds()
-        return 'active', f"No closed patterns found from request text"
+        return 'active', f"The job is deemed active because no closed patterns were found in the HTML request text, playwright was not used."
 
     except Exception as e:
         return 'unknown', f"Error in request text cleaning: {type(e).__name__}: {e}"
