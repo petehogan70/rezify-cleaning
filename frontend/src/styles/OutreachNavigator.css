@@ -1,0 +1,214 @@
+/* Modal Overlay & Container */
+.navigator-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.navigator-modal {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    position: relative;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.navigator-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.navigator-card {
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #fafafa;
+    position: relative;
+    overflow: hidden;
+}
+
+.navigator-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--hover-color));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.navigator-card:hover {
+    border-color: var(--primary-color);
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px color-mix(in srgb, var(--primary-color) 15%, transparent);;
+}
+
+.navigator-card:hover::before {
+    transform: scaleX(1);
+}
+
+.card-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.navigator-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.card-subtitle {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-description {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.navigator-footer {
+    text-align: center;
+    padding-top: 16px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.navigator-footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Co-Pilot specific styles */
+.copilot-intro {
+    text-align: center;
+}
+
+.copilot-intro p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.copilot-cta {
+    margin: 32px 0;
+}
+
+.big-copilot-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px color-mix(in srgb, var(--primary-color) 30%, transparent);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.big-copilot-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px color-mix(in srgb, var(--primary-color) 40%, transparent);
+}
+
+.big-copilot-btn:active {
+    transform: translateY(0);
+}
+
+.copilot-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navigator-modal {
+        padding: 24px;
+        margin: 20px;
+        width: calc(100% - 40px);
+    }
+    
+    .navigator-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .modal-header h2 {
+        font-size: 20px;
+    }
+    
+    .navigator-card {
+        padding: 20px;
+    }
+    
+    .big-copilot-btn {
+        padding: 14px 24px;
+        font-size: 16px;
+    }
+} 

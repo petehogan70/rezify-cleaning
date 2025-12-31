@@ -1,0 +1,12 @@
+ :root {
+    --primary-color: #DB3A00; /* This is the primary color for the site - #DB3A00 - CHANGES by school*/
+    --hover-color: #e03e00; /* This is the hover color for the site - #e03e00 - CHANGES by school*/
+    --text-against-pc: white; /* text color against primary color - CHANGES by school*/
+    --hero-dot-color: white; /* color of the dots in the hero section */
+    --background-color: #F0F0F0; /* main background for the page */
+    --background-color-hero: #F2F2F2; /* background for the hero section */
+    --text-color: black; /* main text color */
+    --text-color-2: #242424; /* secondary text color */
+    --background-color-2: white; /* background for things like feature boxes */
+    --primary-aw: var(--primary-color);
+  }

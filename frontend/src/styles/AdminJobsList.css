@@ -1,0 +1,169 @@
+body.admin .job-card {
+  background-color: #ffffff; /* White background */
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color); /* Accent border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Light shadow */
+  position: relative; /* Position relative for absolute positioning of star and checkbox */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+body.admin .logo-title-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* spacing between logo and title */
+  margin-bottom: 10px;
+}
+
+body.admin .job-title {
+  margin: 0;
+  font-size: 1.6em;
+  color: #333;
+  flex: 1; /* Optional: allows title to take remaining space */
+}
+
+body.admin .job-card p {
+  margin: 10px 0;
+  color: #444; /* Lighter text color */
+}
+
+body.admin .job-card a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+body.admin .job-card a.underlined-link {
+  color: #666;
+  text-decoration: underline; /* Add underline */
+}
+
+body.admin .job-card .more-link {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+body.admin .job-card .full-description {
+  display: none;
+}
+
+body.admin .company-name {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+body.admin .full-description {
+  margin-top: 10px;
+}
+
+body.admin .fallback-logo {
+  width: 80px;
+  height: 80px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  background-color: var(--primary-color);
+  color: var(--text-against-pc);
+  font-size: 36px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+body.admin .company-logo {
+  vertical-align: middle;
+  width: 80px;
+  height: 80px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  object-fit: contain;
+}
+
+body.admin .removed-job-card {
+  background-color: #f5f5f5; /* Light gray background */
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color); /* Accent border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Light shadow */
+  position: relative; /* Position relative for absolute positioning of star and checkbox */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  text-align: left;
+}
+
+body.admin .removed-job-card.fade-out {
+    opacity: 0;
+    transform: translateY(-6px);
+}
+
+body.admin .removed-logo-title-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* spacing between logo and title */
+  margin-bottom: 10px;
+}
+
+body.admin .removed-job-title {
+  margin: 0;
+  font-size: 1em;
+  color: #333;
+  flex: 1; /* Optional: allows title to take remaining space */
+}
+
+body.admin .removed-job-card p {
+  font-size: 0.9rem;
+  font-weight: normal;
+  margin: 10px 0;
+  color: #444; /* Lighter text color */
+}
+
+body.admin .removed-job-card a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+body.admin .admin-remove-button {
+  background-color: var(--primary-color);
+  color: var(--text-against-pc);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Optional: Smooth transition */
+}
+body.admin .admin-remove-button:hover {
+  background-color: var(--hover-color);
+}
+body.admin .admin-remove-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+body.admin .admin-job-good-button {
+  margin-top: 5px;
+  background-color: #00bd00;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Optional: Smooth transition */
+}
+body.admin .admin-job-good-button:hover {
+  background-color: #007500;
+}
+body.admin .admin-job-good-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+

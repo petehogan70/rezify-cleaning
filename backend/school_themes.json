@@ -1,0 +1,180 @@
+{
+    "rezify": {
+        "primary_color": "#DB3A00",
+        "hover_color": "#ff4500",
+        "text_against_pc": "white",
+        "logo": "rezify_logo2.png"
+    },
+    "rezifyadmin": {
+        "primary_color": "#DB3A00",
+        "hover_color": "#ff4500",
+        "text_against_pc": "white",
+        "logo": "rezify_logo2.png",
+        "full_name": "Rezify Admin",
+        "admin_emails": ["peter.h@rezify.ai", "ishan.d@rezify.ai", "don.h@rezify.ai"]
+    },
+    "purdue": {
+        "primary_color": "black",
+        "hover_color": "#1A1A1A",
+        "text_against_pc": "#cfb991",
+        "logo": "purdue_logo.png",
+        "email_ending": "@purdue.edu",
+        "full_name": "Purdue University"
+    },
+    "mst": {
+        "primary_color": "#164734",
+        "hover_color": "#0f3325",
+        "text_against_pc": "white",
+        "logo": "mst_logo.png",
+        "email_ending": "@mst.edu",
+        "alternate_email_endings": ["@umsystem.edu"],
+        "full_name": "Missouri University of Science and Technology",
+        "admin_emails": ["sample.admin@mst.edu", "hathawaysa@mst.edu"]
+    },
+    "gatech": {
+        "primary_color": "#003057",
+        "hover_color": "#8a7d50",
+        "text_against_pc": "#B3A369",
+        "logo": "gatech_logo.png",
+        "email_ending": "@gatech.edu",
+        "full_name": "Georgia Institute of Technology"
+    },
+    "stchas": {
+        "primary_color": "#820024",
+        "hover_color": "#642332",
+        "text_against_pc": "white",
+        "logo": "stchas_logo.png",
+        "email_ending": "@stchas.edu",
+        "full_name": "St. Charles Community College"
+    },
+    "stlcc": {
+        "primary_color": "#003A70",
+        "hover_color": "#02274A",
+        "text_against_pc": "white",
+        "logo": "stlcc_logo.jpeg",
+        "email_ending": "@stlcc.edu",
+        "full_name": "St. Louis Community College"
+    },
+    "lindenwood": {
+        "primary_color": "#101820",
+        "hover_color": "#1A1A1A",
+        "text_against_pc": "#b5a36a",
+        "logo": "lindenwood_logo.png",
+        "email_ending": "@lindenwood.edu",
+        "full_name": "Lindenwood University"
+    },
+    "umsl": {
+        "primary_color": "#ba0c2f",
+        "hover_color": "#8f0722",
+        "text_against_pc": "white",
+        "logo": "umsl_logo.png",
+        "email_ending": "@umsl.edu",
+        "alternate_email_endings": ["@umsystem.edu"],
+        "full_name": "University of Missouri - Saint Louis",
+        "admin_emails": ["sample.admin@umsl.edu", "emily_rapko@umsl.edu", "mccluree@umsl.edu"]
+    },
+    "college": {
+        "primary_color": "#1c2542",
+        "hover_color": "#161D34",
+        "text_against_pc": "white",
+        "logo": "college_logo.png",
+        "email_ending": "@college.edu",
+        "full_name": "Generic College"
+    },
+    "missouri": {
+        "primary_color": "black",
+        "hover_color": "#1A1A1A",
+        "text_against_pc": "#FDB719",
+        "logo": "missouri_logo.png",
+        "email_ending": "@missouri.edu",
+        "full_name": "University of Missouri"
+    },
+    "ranken": {
+        "primary_color": "#CC0A2F",
+        "hover_color": "#b30e14",
+        "text_against_pc": "white",
+        "logo": "ranken_logo.jpeg",
+        "email_ending": "@ranken.edu",
+        "full_name": "Ranken Technical College"
+    },
+    "maryville": {
+        "primary_color": "#c91235",
+        "hover_color": "#a60f2b",
+        "text_against_pc": "white",
+        "logo": "maryville_logo.png",
+        "email_ending": "@maryville.edu",
+        "full_name": "Maryville University"
+    },
+    "obu": {
+        "primary_color": "#532F89",
+        "hover_color": "#42246e",
+        "text_against_pc": "white",
+        "logo": "obu_logo.png",
+        "email_ending": "@obu.edu",
+        "full_name": "Ouachita Baptist University"
+    },
+    "columbiasc": {
+        "primary_color": "#5f259e",
+        "hover_color": "#481a7a",
+        "text_against_pc": "white",
+        "logo": "columbiasc_logo.jpg",
+        "email_ending": "@columbiasc.edu",
+        "full_name": "Columbia College (SC)"
+    },
+    "upenn": {
+        "primary_color": "#011f5b",
+        "hover_color": "#01153d",
+        "text_against_pc": "white",
+        "logo": "upenn_logo.jpg",
+        "email_ending": "@upenn.edu",
+        "full_name": "University of Pennsylvania"
+    },
+    "slu": {
+        "primary_color": "#003ea5",
+        "hover_color": "#01348A",
+        "text_against_pc": "white",
+        "logo": "slu_logo.png",
+        "email_ending": "@slu.edu",
+        "full_name": "Saint Louis University"
+    },
+    "illinois": {
+        "primary_color": "#13294B",
+        "hover_color": "#1b3c6e",
+        "text_against_pc": "#FF5F05",
+        "logo": "illinois_logo.png",
+        "email_ending": "@illinois.edu",
+        "full_name": "University of Illinois Urbana-Champaign"
+    },
+    "salem": {
+        "primary_color": "#3C5AB0",
+        "hover_color": "#314b91",
+        "text_against_pc": "white",
+        "logo": "salem_logo.jpeg",
+        "email_ending": "@salem.edu",
+        "full_name": "Salem College"
+    },
+    "harpercollege": {
+        "primary_color": "#003466",
+        "hover_color": "#01274a",
+        "text_against_pc": "white",
+        "logo": "harpercollege_logo.jpg",
+        "email_ending": "@harpercollege.edu",
+        "full_name": "Harper College"
+    },
+    "depauw": {
+        "primary_color": "#231f20",
+        "hover_color": "black",
+        "text_against_pc": "#F2C75C",
+        "logo": "depauw_logo.png",
+        "email_ending": "@depauw.edu",
+        "full_name": "Depauw University"
+    },
+    "gcu": {
+        "primary_color": "#54279b",
+        "hover_color": "#3e1a78",
+        "text_against_pc": "white",
+        "logo": "gcu_logo.png",
+        "email_ending": "@gcu.edu",
+        "full_name": "Grand Canyon University"
+    }
+}

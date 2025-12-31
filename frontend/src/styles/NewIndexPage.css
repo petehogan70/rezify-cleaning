@@ -1,0 +1,1744 @@
+body.index {
+    background-color: var(--background-color); /* #0d0d0d */
+    color: var(--text-color-2);
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+body.index .header-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background-color-hero);
+  padding: 0.4rem 2rem;
+  border-bottom: 1px solid var(--primary-color);
+  font-family: var(--font-family);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+body.index .header-left {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+body.index .header-logo {
+  height: 36px;
+  margin-right: 0.5rem;
+}
+
+body.index .header-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-family: 'Orbitron', sans-serif;
+}
+
+body.index .header-center {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+}
+
+
+body.index .header-link,
+body.index button.header-link {
+  text-decoration: none;
+  color: var(--text-color);
+  background-color: var(--background-color-hero);
+  font-weight: 500;
+  transition: color 0.2s;
+  border: none;
+  font-family: var(--font-family);
+  font-size: 16px;
+}
+
+body.index .header-link:hover,
+body.index button.header-link:hover{
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+body.index .header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+body.index .header-divider {
+  height: 24px;
+  width: 1px;
+  background-color: var(--primary-color);
+}
+
+body.index .header-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+body.index .header-btn:hover {
+  background: var(--primary-color-hover);
+}
+
+body.index .feature.text-left-image-right .feature-split {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* make it responsive */
+}
+
+body.index .feature.text-left-image-right .feature-text {
+  flex: 0 0 50%; /* 👈 Take up 60% of the width */
+  text-align: left;
+}
+
+body.index .feature.text-left-image-right  .feature-image {
+  flex: 0 0 40%; /* 👈 Take up 40% of the width */
+  text-align: center;
+}
+
+body.index .feature.text-left-image-right .feature-image img {
+  width: 60%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+body.index .feature-text ul {
+  padding-left: 1.2rem; /* Adds spacing to the left of bullets */
+  margin: 0;
+}
+
+body.index .feature-text li {
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+
+  
+  
+  body.index .hero {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 10vh 8vw;
+    position: relative;
+    min-height: 80vh;
+    overflow: hidden;
+    overflow-x: hidden;/* Good practice if background elements might unexpectedly overflow */
+
+    /* --- New Background Styling --- */
+    background-color: var(--background-color-hero); /* Explicitly set base background color */
+    background-image: radial-gradient(var(--hero-dot-color) 1px, transparent 1.5px);
+    background-size: 20px 20px; /* Adjust dot spacing: 20px apart */
+    /* The 1px is dot size, transparent 1.5px ensures it's a dot not a filled circle */
+  }
+
+  body.index .hero-left {
+    max-width: 45%;
+  }
+
+  body.index .hero-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack animation and new content vertically */
+    align-items: flex-end;  /* Align items to the right */
+    justify-content: flex-start; /* Align items to the top */
+    padding-top: 3rem; /* Add some space from the top of the hero section */
+    padding-right: 2rem; /* Add some space from the right edge */
+    max-width: 60%;
+  }
+
+  body.index .ai-demo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  body.index .demo-request-button {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid var(--primary-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+    margin-top: 1.5rem; /* Space from IndexAIDemo */
+  }
+
+  body.index .demo-request-button:hover{
+    background-color: var(--primary-color);
+    color: var(--text-against-pc); /* Use the text color against primary */
+  }
+  
+  body.index .hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+    color: var(--text-color);
+  }
+  
+  body.index .button-group {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  /* ─── Orb styling ─── */
+  body.index .big-button {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border-color: transparent;
+    background: radial-gradient(
+      circle,
+      color-mix(in srgb, black, var(--primary-color) 90%) 0%,       /* light-orange inner circle */
+      var(--primary-color) 70%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    animation: pulse 2s infinite, float 3s ease-in-out infinite;
+    cursor: pointer;
+  }
+  body.index .big-button img {
+    width: 70%;
+    height: auto;
+    transition: transform .3s;
+    object-fit: cover;
+  }
+  body.index .big-button:hover {
+    transform: scale(1.05);
+  }
+  body.index .big-button:hover img {
+    transform: scale(0.9);
+  }
+
+  
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 15px var(--primary-color); }
+    50%  { box-shadow: 0 0 30px var(--primary-color); }
+    100% { box-shadow: 0 0 15px var(--primary-color); }
+  }
+  @keyframes float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+  
+  /* ─── Hero CTA layout ─── */
+  body.index .hero-cta {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  body.index .cta-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* stack your form controls, left-aligned */
+  body.index .cta-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  body.index .cta-right .action-button {
+    background: var(--primary-color);
+    color: var(--text-against-pc);
+    border: none;
+    border-radius: 50px;
+    padding: .75rem 2rem;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    cursor: pointer;
+    width: 14rem;
+    transition: transform .2s;
+  }
+  body.index .cta-right .action-button:hover {
+    transform: scale(1.03);
+  }
+  
+  body.index .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    cursor: pointer;
+  }
+  body.index .checkbox-label input {
+    transform: scale(1.2);
+  }
+  
+  
+  body.index .button-logo {
+    width: 32px;
+    height: 32px;
+    margin-right: 0.75rem;
+    vertical-align: middle;
+  }
+  
+  body.index .big-button:hover {
+    transform: scale(1.03);
+  }
+  
+  body.index .location-btn {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    padding: .75rem 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+  }
+  body.index .location-btn:hover {
+    background: var(--primary-color);
+    color: #000;
+  }
+  
+  /* ... (your existing CSS) ... */
+
+  
+  #scanner-container {
+    width: 300px; /* You can adjust this */
+    height: 300px; /* You can adjust this */
+    background: transparent;
+    margin-bottom: 1.5rem; /* Space between animation and the new content below it */
+  }
+  
+  /* Styling for the new content block under the animation */
+  body.index .ai-demo-output {
+    background-color: var(--background-color-2); /* Slightly transparent dark background */
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 300px; /* Match scanner width or adjust as needed */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: left;
+  }
+  
+  #demo-text-container {
+    font-family: 'Courier New', Courier, monospace; /* Classic terminal font */
+    font-size: 0.85rem;
+    color: var(--text-color-2); /* Light grey text */
+    height: 100px; /* Adjust based on the number of lines in your animation */
+    overflow: hidden; /* Hide overflow if text gets too long during animation */
+    margin-bottom: 1rem;
+  }
+  
+  #demo-text-container div {
+    margin-bottom: 0.3rem; /* Space between lines */
+  }
+  
+  #demo-text-container .cmd {
+    color: var(--primary-color); /* Make commands stand out */
+    font-weight: bold; /* Make commands bold */
+
+  }
+  #demo-text-container .out {
+    color: var(--text-color); /* Standard output text */
+  }
+  #demo-text-container .ok {
+    color: #208337; /* Green for success messages */
+  }
+  
+  body.index .demo-progress-bar-container {
+    width: 100%;
+    height: 6px;
+    background-color: var(--background-color);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+  
+  body.index .demo-progress-bar-fill {
+    height: 100%;
+    width: 0%; /* Will be animated by JavaScript */
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    transition: width 0.5s ease-in-out;
+  }
+  
+  body.index .ai-tagline {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0;
+  }
+  
+
+  /* Modal Background */
+body.index .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Modal Content */
+  body.index .modal-content {
+     position: relative; /* Needed for absolute positioning of close button */
+    background-color: var(--background-color-2); /* Darker, subtly transparent background */
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    max-width: 500px;
+    text-align: center;
+    color: var(--text-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Close Button */
+  body.index .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+  }
+  body.index .close-btn:hover {
+    color: grey;
+  }
+  body.index .terms-container {
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  body.index .terms-container label {
+    font-size: 14px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    text-shadow:
+        -0.5px -0.5px 0 transparent,
+         0.5px -0.5px 0 transparent,
+        -0.5px  0.5px 0 transparent,
+         0.5px  0.5px 0 transparent;
+  }
+  
+  body.index .terms-link {
+    /*color: #5d92f5;  Same as the rest */
+    background-color: transparent;
+    border-color: transparent;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  /* Ensure the hero section can accommodate the moved elements if needed */
+  body.index .hero {
+    display: flex;
+    align-items: flex-start; /* Align left and right columns to the top */
+    justify-content: space-between;
+    padding: 4vh 6vw; /* Adjusted padding slightly */
+    padding-bottom: 3rem;
+    min-height: 80vh; /* Ensure enough height */
+  }
+  
+  body.index .hero-left {
+    max-width: 45%;
+    padding-top: 2rem; /* Balance the top padding with hero-right */
+  }
+  body.index .hero {
+    position: relative;
+  }
+  
+  body.index .hero-nav {
+    position: absolute;
+    top: 2rem;
+    right: 10vw;          /* match your hero’s horizontal padding */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  body.index .hero-nav__btn,
+  body.index .hero-nav .profile-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid var(--primary-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+    background-color: var(--background-color-hero);
+  }
+  
+  body.index .hero-nav__btn:hover,
+  body.index .hero-nav .profile-text:hover {
+    background-color: var(--primary-color);
+    color: var(--text-against-pc); /* Use the text color against primary */
+  }
+
+  body.index .help-btn {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid var(--primary-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+    margin-top: 1rem; /* Space from the hero-nav */
+  }
+
+  body.index .help-btn:hover{
+    background-color: var(--primary-color);
+    color: var(--text-against-pc); /* Use the text color against primary */
+  }
+  
+  body.index .features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 4rem 3vw; /* Adjusted padding slightly for better spacing with new cards */
+    gap: 2rem; /* Increased gap for more distinct cards */
+  }
+  body.index .feature {
+      background-color: var(--background-color-2);
+      border: 1px solid var(--primary-color);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      width: 42%;              /* % of the parent container */
+      text-align: center;
+      min-width: 300px; /* Ensures cards don't get too small */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+  .feature:hover {
+    transform: translateY(-8px) scale(1.02); /* More noticeable lift and slight scale */
+    box-shadow: 0 10px 25px rgba(var(--primary-color-rgb), 0.35); /* Enhanced primary color glow */
+  }
+  
+  body.index .feature .icon {
+    font-size: 2.8rem; /* Slightly larger icon */
+    /* Gradient text for the icon */
+    background: linear-gradient(45deg, var(--primary-color), white);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.25rem;
+    display: inline-block; /* Necessary for background-clip to work well */
+  }
+  
+  body.index .feature h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.35rem; /* Slightly larger title */
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+  }
+  
+  body.index .feature p {
+    color: var(--text-color-2);
+    line-height: 1.6; /* Improved readability */
+    font-size: 0.95rem;
+  }
+
+  body.index .feature img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+
+  
+  
+  
+  /* dropdown same as before */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 2.6rem;
+    right: 0;
+    background: #1a1a1a;
+    color: #f4f6f8;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    z-index: 10;
+  }
+  
+  .profile-text {
+    position: relative;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  /* show on hover */
+  .profile-text:hover + .dropdown-content,
+  .dropdown-content:hover {
+    display: block;
+  }
+  
+  body.index .big-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  body.index .hint-text {
+    display: none;
+  }
+  
+  body.index .form-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  body.index .checkbox-label {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  body.index .checkbox-label input {
+    margin-right: 0.5rem;
+  }
+
+  
+  body.index .form-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;               /* vertical space between button & each label */
+    justify-content: center;
+  }
+  
+  /* if you need to tweak the width of the right-column form, for example: */
+  /* .cta-right { max-width: 200px; } */
+  
+  
+  
+  
+  body.index .ai-icon {
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              width: 40px;
+              height: 40px;
+              background: url('https://www.flaticon.com/svg/static/icons/svg/2721/2721297.svg') no-repeat center center / contain;
+              animation: rotate 3s linear infinite;
+          }
+  
+          @keyframes rotate {
+              0% {
+                  transform: rotate(0deg);
+              }
+  
+              100% {
+                  transform: rotate(360deg);
+              }
+          }
+  
+          body.index .inputs {
+              margin-top: 20px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+          }
+  
+          body.index .inputs label {
+              display: flex;
+              align-items: center;
+              color: var(--primary-color);
+              font-size: 18px;
+              font-weight: bold;
+              margin-bottom: 10px;
+          }
+  
+          body.index .inputs label input {
+              margin-right: 10px;
+          }
+  
+          body.index .inputs button {
+              padding: 15px 30px;
+              border: none;
+              border-radius: 30px;
+              background: radial-gradient(circle, var(--primary-color), var(--primary-color));
+              color: white;
+              cursor: pointer;
+              font-size: 16px;
+              font-weight: bold;
+              transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+              margin-top: 20px;
+          }
+  
+  
+  
+          body.index .inputs button:hover {
+              opacity: 0.9;
+              transform: scale(1.05);
+              box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
+          }
+  
+          #file-name {
+              margin-top: 10px;
+              font-size: 16px;
+              color: var(--text-color-2);
+          }
+  
+          #file-name.attached {
+              animation: fadeInOut 1s infinite;
+          }
+  
+          @keyframes fadeInOut {
+              0%,
+              100% {
+                  opacity: 1;
+              }
+  
+              50% {
+                  opacity: 0.5;
+              }
+          }
+  
+          @keyframes float {
+              0% {
+                  transform: translateY(0);
+              }
+  
+              50% {
+                  transform: translateY(-10px);
+              }
+  
+              100% {
+                  transform: translateY(0);
+              }
+          }
+  
+          /* Loading Screen Styles */
+          #loading-overlay {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 0, 0, 0.8);
+              z-index: 9999;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: white;
+              font-size: 24px;
+              font-family: 'Roboto', sans-serif;
+              text-align: center;
+              display: none;
+          }
+  
+          /* Overlay Animation */
+          .transition-overlay {
+              position: fixed;
+              top: 50%;
+              left: 50%;
+              width: 100px;
+              height: 100px;
+              background: var(--primary-color);
+              border-radius: 50%;
+              transform: translate(-50%, -50%);
+              z-index: 9999;
+              pointer-events: none;
+              transition: all 1.5s ease;
+              visibility: hidden;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: white;
+              font-size: 24px;
+              flex-direction: column;
+          }
+  
+          .transition-overlay.show {
+              width: 3000px;
+              height: 3000px;
+              visibility: visible;
+          }
+  
+          .transition-overlay img {
+              width: 150px;
+              height: auto;
+              transition: width 1.5s ease;
+          }
+  
+          .transition-overlay.show img {
+              width: 300px;
+          }
+  
+          /* Spinner */
+          body.index .spinner {
+              border: 4px solid rgba(255, 255, 255, 0.3);
+              border-top: 4px solid white;
+              border-radius: 50%;
+              width: 24px;
+              height: 24px;
+              animation: spin 1s linear infinite;
+          }
+
+          /* Spinner AW */
+          body.index .spinner-aw {
+              border: 4px solid rgba(255, 255, 255, 0.3);
+              border-top: 4px solid var(--primary-color);
+              border-radius: 50%;
+              width: 24px;
+              height: 24px;
+              animation: spin 1s linear infinite;
+          }
+  
+          @keyframes spin {
+              0% {
+                  transform: rotate(0deg);
+              }
+  
+              100% {
+                  transform: rotate(360deg);
+              }
+          }
+  
+/* Location Input Styles */
+#location-container {
+    margin-top: 10px;
+}
+  
+#location-container input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    font-size: 16px;
+    background: white;
+    color: var(--text-color-2);
+}
+
+#location-container input::placeholder {
+    color: var(--text-color-2);
+    opacity: 0.8;
+}
+  
+          /* Progress Bar Animation */
+          body.index .progress-bar {
+              width: 100%;
+              height: 5px;
+              background: white;
+              border-radius: 5px;
+              overflow: hidden;
+              margin-top: 10px;
+              display: none;
+          }
+  
+          body.index .progress-bar .fill {
+              height: 100%;
+              width: 0;
+              background: var(--primary-color);
+              animation: loading 1s ease-in-out forwards;
+          }
+  
+          @keyframes loading {
+              0% {
+                  width: 0;
+              }
+  
+              100% {
+                  width: 100%;
+              }
+          }
+  
+          body.index .login-button {
+              background-color: black;
+              color: var(--primary-color);
+              padding: 10px 20px;
+              border: 2px solid var(--primary-color);
+              border-radius: 5px;
+              text-decoration: none;
+              font-weight: bold;
+              transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+          }
+  
+          body.index .login-button:hover {
+              background-color: var(--primary-color);
+              color: white;
+              border-color: var(--primary-color);
+          }
+  
+          .profile-text {
+              color: var(--primary-color);
+              font-weight: bold;
+              font-size: 1em;
+              cursor: pointer;
+              position: relative;
+          }
+          .dropdown-content {
+              display: none;
+              position: absolute;
+              top: 60px;
+              right: 60px;
+              background-color: #F9F9F9; /* Lighter grey background */
+              color: #999; /* Lighter grey text */
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              border-radius: 5px;
+              z-index: 1;
+          }
+          .dropdown-content a, .dropdown-content form, .dropdown-content p .dropdown-content button {
+              color: #999;
+              padding: 10px 10px;
+              text-decoration: none;
+              display: block;
+              border-top: 1px solid #e0e0e0;
+              margin: 0; /* Remove margin */
+          }
+
+          .see-full-profile-btn {
+              border: none;
+              background: none;
+              padding: 10px 10px;
+              font: inherit;
+              outline: inherit;
+              color: var(--primary-color);
+              cursor: pointer;
+              text-align: left;
+              width: 100%;
+              border-top: 1px solid #e0e0e0;
+            }
+
+            .see-full-profile-btn:hover {
+              text-decoration: underline;
+              color: var(--hover-color);
+            }
+
+          .dropdown-content a:first-child, .dropdown-content form:first-child, .dropdown-content p:first-child {
+              border-top: none; /* Remove top border for the first item */
+          }
+          .dropdown-content .logout-text {
+              color: #417AFF; /* Lighter blue text */
+              text-decoration: underline;
+          }
+          .dropdown-content .delete-account-text {
+              color: red; /* Red text */
+              text-decoration: underline;
+          }
+
+          
+  
+          body.index .section {
+              padding: 50px 20px;
+              background-color: #1a1a1a;
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-wrap: wrap;
+          }
+  
+          body.index .section:nth-child(even) {
+              background-color: #141414;
+          }
+  
+          body.index .section-content {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              max-width: 1200px;
+              width: 100%;
+          }
+  
+          body.index .section-content .text {
+              flex: 1;
+              min-width: 300px;
+              padding: 20px;
+              box-sizing: border-box;
+          }
+  
+          body.index .section-content img {
+              max-width: 400px;
+              margin: 20px;
+              flex: 1;
+          }
+  
+          body.index .section h3 {
+              font-family: 'Orbitron', sans-serif;
+              font-size: 28px;
+              color: var(--primary-color);
+              margin-bottom: 20px;
+          }
+  
+          body.index .section p {
+              font-size: 16px;
+              line-height: 1.6;
+          }
+  
+          body.index footer {
+              background: #E0E0E0;
+              padding: 20px;
+              padding-left: 0;
+              padding-right: 0;
+              text-align: center;
+              color: var(--text-color);
+              width: 100%;
+          }
+          #mile-container {
+              display: inline-flex;
+              align-items: center;
+              margin-top: 10px;
+              color: var(--primary-color);
+          }
+  
+          #mile-container label,
+          #mile-container span {
+              margin: 0 5px;
+          }
+  
+          #mile-container input {
+              margin-left: 5px;
+              padding: 10px;
+              border-radius: 5px;
+              border: 1px solid var(--primary-color);
+              font-size: 16px;
+              background: white;
+              color: var(--text-color-2);
+          }
+          body.index .form-column {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 5px; /* Space between elements */
+              margin-top: 20px;
+              margin-bottom: 20px;
+              width: 100%; /* Full width to ensure alignment */
+          }
+          body.index .square-image {
+              width: 100px; /* Adjust to the desired size */
+              height: 100px; /* Ensure it matches the width */
+              object-fit: cover; /* Ensures the image doesn't stretch */
+          }
+  
+          /* container around big button + hint */
+          body.index .big-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* the stacked controls under the big button */
+  body.index .form-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  
+  /* checkboxes styling */
+  body.index .checkbox-label {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+  body.index .checkbox-label input {
+    margin-right: 0.5rem;
+  }
+  
+  /* make sure your hero-left is centered vertically */
+  body.index .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+body.index .file-inp {
+  display: none;
+}
+
+body.index .lottie-play {
+  width:100%;
+  height:100%;
+}
+
+  
+body.index .fail-popup {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FC0404; /* Red */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+/* ======================================================================= */
+/* START: CSS for "Rezify Across the Nation" Map Section (FLAG MARKERS)  */
+/* This REPLACES any previous .map-marker .marker-dot styles for this section. */
+/* ======================================================================= */
+
+.map-showcase-section {
+  padding: 4rem 0;
+  background-color: var(--background-color); /* Your theme's dark background */
+  text-align: center;
+}
+
+body.index .section-title {
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  font-size: 2.2rem;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+  color: var(--text-color); /* Your theme's light text/secondary color */
+}
+
+body.index .section-title h2 {
+    text-align: center;
+}
+
+.map-showcase-section .section-lead {
+  color: var(--text-color-2); /* Your theme's mid-tone text color */
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+  line-height: 1.6;
+}
+
+.map-container {
+  width: 100%;
+  max-width: 900px; /* Adjust for your desired map display size */
+  position: relative;
+  margin: 0 auto;
+  /* IMPORTANT: Set the background image for your map here!
+    Make sure the path is correct based on where you placed your map image.
+    If image 'us_map.svg' is in 'rezify/frontend/src/assets/images/':
+  */
+  background-image: url('../assets/images/us_map.svg'); /* << ADJUST PATH IF NEEDED */
+  /* Or, if image 'image_2d8d6e.png' is in 'rezify/frontend/public/static/':
+    background-image: url('/static/image_2d8d6e.png');
+  */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* IMPORTANT: Set height for aspect ratio.
+    Example: if your map is 900px wide and 540px tall at max display.
+    Or use padding-bottom: (height/width * 100%) + remove height. e.g. 60% for a 900x540 map.
+  */
+  height: 540px; /* <<<< ADJUST THIS! Based on your map image's aspect ratio & max-width */
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Main positioning div for each marker */
+.map-marker {
+  position: absolute;
+  /* This transform ensures the BOTTOM-CENTER of the flagpole base is the anchor point */
+  transform: translate(-50%, -100%);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10; /* Ensure markers are above the map */
+  /* 'top' and 'left' percentages are set via inline styles in your JSX */
+}
+
+/* Container for the flag and pole visual elements */
+.map-marker .marker-flag-pin {
+  width: 2px; /* Width of the flagpole */
+  height: 22px; /* Total height of the flagpole part */
+  position: relative;
+  display: flex;
+  /* align-items: center; */ /* Not needed if pole is centered via transform */
+}
+
+.map-marker .flag-pole {
+  width: 100%; /* Takes width from .marker-flag-pin (e.g., 2px) */
+  height: 100%; /* Takes height from .marker-flag-pin (e.g., 22px) */
+  background-color: var(--text-color-2); /* Pole color (e.g., white/light grey) */
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.map-marker .flag-shape {
+  width: 14px;  /* Width of the flag */
+  height: 9px; /* Height of the flag */
+  background-color: var(--primary-color); /* Flag color from theme */
+  position: absolute;
+  top: 0px; /* Position flag at the top of the pole */
+  /* If pole is 2px wide, left: 1px will make the flag start from the right edge of the pole.
+    Adjust if your pole width changes or for different flag alignment.
+  */
+  left: 1px;
+  border: 1px solid var(--text-color-2); /* Optional border for the flag */
+  border-left: none;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease-out;
+}
+
+/* Pulsing effect - attached to the marker-flag-pin to pulse around the pole's base */
+.map-marker .marker-flag-pin::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; /* Position pulse slightly below/around the pole base */
+  left: 50%; /* Center of the pole */
+  width: 10px; /* Size of the pulse disc - smaller for a more subtle effect with flags */
+  height: 10px;/* Size of the pulse disc */
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  /* Ensure transform here only handles positioning relative to pseudo-element's origin */
+  transform: translateX(-50%) scale(1);
+  opacity: 0.3;
+  z-index: -1; /* Behind the pole */
+  animation: pulse-marker-flag 2s infinite ease-out;
+}
+
+/* Keyframes for the pulsing animation */
+@keyframes pulse-marker-flag { /* Renamed to avoid conflict if old one is still somewhere */
+  0% { transform: translateX(-50%) scale(0.7); opacity: 0.5; }
+  70% { transform: translateX(-50%) scale(1.8); opacity: 0; } /* Adjust scale for desired pulse size */
+  100% { transform: translateX(-50%) scale(0.7); opacity: 0; }
+}
+
+/* Hover effect for the marker */
+.map-marker:hover .flag-shape {
+  transform: scale(1.15); /* Slight lift/pop for the flag part */
+}
+
+/* Marker Label styling (adjust margin-top to be below the flagpole base) */
+.map-marker .marker-label {
+  margin-top: 4px; /* Space below the base of the flagpole */
+  background-color: rgba(13, 13, 13, 0.85);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  pointer-events: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.map-marker:hover .marker-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ensure your .container class is defined globally or use this if needed */
+/* .container {
+  width: 100%;
+  max-width: 1200px;
+  padding-right: 8vw;
+  padding-left: 8vw;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+} */
+/* ======================================================================= */
+/* END: CSS for "Rezify Across the Nation" Map Section (FLAG MARKERS)    */
+/* ======================================================================= */
+
+    body.index a {
+      color: var(--primary-color);
+    }
+/* New Flex Container Layout */
+body.index .plans-section .plans-flex-container {
+  display: flex;
+  gap: 2rem;
+  width: 93%;
+  max-width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+/* Feature Card on the Left */
+body.index .plans-section .plans-feature-card {
+  flex: 1;
+  background-color: var(--background-color-2);
+  border: 1px solid var(--primary-color);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: left;
+  max-width: 30%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Container for Plans on the Right */
+body.index .plans-section .plans-container {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  max-width: 65%;
+}
+
+body.index .plans-section .plan-card {
+  background-color: #ffffff;
+  padding: 1rem;
+  margin: 10px ;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+body.index .plans-section .plan-card:hover {
+  transform: scale(1.03);
+}
+
+body.index .plans-section .plan-left {
+  text-align: center;
+  width: 25%;
+  padding: 20px;
+}
+
+body.index .plans-section .plan-card ul {
+  list-style-type: none;
+  width: 75%;
+}
+
+body.index .plans-section .plan-card li {
+  float: right;
+  padding-top: 10px;
+  padding-bottom: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  text-align: center;
+}
+
+body.index .plans-section .emoji {
+  font-size: 3rem;
+  background: linear-gradient(45deg, var(--primary-color), #fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+body.index .university-info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--background-color);
+}
+
+body.index .university-feature-card {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: var(--background-color-2);
+  border: 1px solid var(--primary-color);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+body.index .university-col-left {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 1rem;
+}
+
+body.index .university-col-left h2 {
+  text-align: center;
+}
+
+body.index .university-col-center {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+body.index .university-col-center img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+body.index .university-col-right {
+  width: 23%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  gap: 1rem;
+}
+
+body.index .university-col-right .demo-request-button {
+    background-color: var(--background-color-2);
+    color: var(--primary-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+    margin-top: 1.5rem; /* Space from IndexAIDemo */
+    text-align: center;
+  }
+
+body.index .university-col-right .demo-request-button:hover {
+    background-color: var(--primary-color);
+    color: var(--text-against-pc); /* Use the text color against primary */
+}
+
+/* Section container */
+body.index .about-us-section {
+  padding: 2rem;
+}
+
+/* Flex container */
+body.index .about-us-flex {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+body.index .about-us-text h2 {
+  text-align: center;
+}
+
+/* Feature styling for about card */
+body.index .about-card {
+  background-color: var(--background-color-2);
+  border: 1px solid var(--primary-color);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  text-align: left;
+  width: 40%;
+}
+
+/* Right column - video */
+body.index .about-us-video {
+  width: 50%;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive YouTube wrapper */
+body.index .video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+}
+
+body.index .video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+/* Mobile stacking */
+@media (max-width: 768px) {
+  body.index .about-us-text,
+  body.index .about-us-video {
+    width: 100%;
+  }
+
+  body, index .about-card {
+    padding: 0rem;
+  }
+
+  body.index .header-banner {
+    padding: 0.4rem 0.4rem;
+  }
+
+  body.index {
+    max-width: 100%;
+  }
+
+  body.index .header-center {
+    display: none;
+  }
+
+  body.index .header-right {
+    gap: 0.5rem;
+  }
+
+  body.index .hero-cta {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .map-marker .marker-flag-pin {
+    height: 18px; /* Slightly smaller pole */
+    width: 2px;
+  }
+  .map-marker .flag-shape {
+    width: 12px;
+    height: 8px;
+  }
+  .map-marker .marker-flag-pin::after { /* Smaller pulse disc */
+    width: 8px;
+    height: 8px;
+    bottom: -2px;
+  }
+  .map-marker .marker-label {
+    font-size: 0.75rem;
+    padding: 3px 6px;
+   }
+
+   body.index .hero-left {
+    transform: scale(0.8);
+    max-width: 100%; /* Ensure it takes full width on small screens */
+    padding-top: 1rem;
+  }
+
+  body.index .hero-right {
+    transform: scale(0.7);
+  }
+
+  body.index .hero-title {
+    transform: scale(1);
+    max-width: 100%; /* Ensure it takes full width on small screens */
+    padding: 0;
+    font-size: 2rem; /* Adjusted font size for smaller screens */
+  }
+  body.index .hero-right {
+    transform: scale(0.9);
+    padding: 0; /* Remove padding for small screens */
+    align-items: center; /* Center align items */
+    max-width: 100%; /* Ensure it takes full width on small screens */
+  }
+  body.index .hero {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    gap: 0rem;         /* Add space between stacked items */
+  }
+
+  body.index .plans-section .plan-card {
+     max-width: 95%;
+     margin-left: 0;
+     margin-right: 0;
+  }
+  body.index .plans-section .plan-card ul {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    width: 60%;
+  }
+
+  body.index .plans-section .plan-card li {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    word-break: break-word;
+    flex-wrap: wrap;
+    font-size: 0.7rem;
+  }
+
+  body.index .plans-section .emoji {
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  body.index .plans-section .plan-left {
+      text-align: center;
+      width: 25%;
+      padding: 5px;
+      font-size: 0.8rem;
+    }
+
+  body.index .plans-section {
+    flex-direction: column;
+    padding: 0.1rem;
+    max-width: 100%;
+  }
+
+  body.index .plans-section .plans-flex-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-left: 0;
+    width: 95%;
+    align-items: center;
+    margin-top: -2rem;
+  }
+
+  body.index .plans-section .plans-feature-card {
+    display: flex;
+    max-width: 100%;
+    min-width: 0;
+    flex-direction: column;
+    width: 84%;
+    align-items: center;
+  }
+
+  body.index .plans-section .plans-feature-card p,
+  body.index .plans-section .plans-feature-card li,
+  body.index .plans-section .plans-feature-card a {
+    font-size: 0.9rem;
+  }
+
+  body.index .plans-section .plans-feature-card h2 {
+    font-size: 1.2rem;
+  }
+
+  body.index .university-feature-card .feature-text p,
+  body.index .university-feature-card .feature-text li,
+  body.index .university-feature-card .feature-text a {
+    font-size: 0.8rem;
+  }
+
+  body.index .university-col-left h2 {
+    font-size: 1.2rem;
+  }
+
+  body.index .about-us-flex h2 {
+    font-size: 1.2rem;
+  }
+
+  body.index .about-us-flex p {
+    font-size: 0.8rem;
+  }
+
+  body.index .plans-section .plans-container {
+    display: flex;
+    max-width: 100%;
+    min-width: 0;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  body.index .university-col-left,
+  body.index .university-col-center,
+  body.index .university-col-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  body.index .features {
+    padding: 0;
+  }
+
+  body.index .about-us-section {
+      padding: 0;
+    }
+
+    body.index .feature.text-left-image-right .feature-split {
+         flex-direction: column; /* Stack text and image vertically */
+         flex-wrap: wrap;
+    }
+
+    body.index .feature.text-left-image-right .feature-text {
+        flex: 0 0 20%;
+        text-align: left;
+    }
+
+    body.index .feature.text-left-image-right .feature-image {
+        flex: 0 0 0%;
+        text-align: center;
+    }
+
+    body.index .features h2 {
+        font-size: 1.2rem;
+    }
+
+    body.index .features p {
+        font-size: 0.8rem;
+    }
+
+    body.index .hero-nav__btn {
+      padding: 0.2rem 0.4rem;
+      font-size: 0.6rem;
+    }
+
+    body.index .header-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    body.index .header-left {
+      margin-right: 0.5rem;
+    }
+
+
+
+}
+

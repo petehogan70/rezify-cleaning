@@ -1,0 +1,224 @@
+body.register {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+body.register .container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+  position: relative;
+}
+body.register h2 {
+  margin: 0 0 20px 0;
+  color: #333;
+}
+body.register input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+body.register button {
+  background-color: var(--primary-color);
+  color: var(--text-against-pc);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+body.register button:hover {
+  background-color: var(--hover-color);
+}
+body.register .toggle-form {
+  /*color: #007bff;*/
+  color: var(--primary-color);
+  margin-top: 10px;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 1rem;
+  /*display: block;*/
+}
+body.register .toggle-form:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}
+body.register .error-message {
+  color: red;
+  margin-top: 10px;
+}
+body.register .parsed-resume-note {
+  font-size: 12px;
+  color: gray;
+}
+
+body.register .spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
+}
+
+body.register .spinner-black {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid var(--primary-aw);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
+}
+
+body.register a {
+  color: var(--primary-color);
+}
+body.register div:hover .tooltip {
+  opacity: 1;
+}
+
+body.register .admin-logo {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.register-options {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.register-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+body.register .register-divider {
+    width: 100%;
+    max-width: 420px;
+    height: 1px;
+    background-color: #d6d6d6;
+    opacity: 0.9;
+    margin: 12px auto 10px auto;
+}
+
+/* Support row */
+body.register .support-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+body.register .support-text {
+    color: #3b3b3b;
+}
+
+body.register .support-button {
+      background-color: var(--primary-color);
+      color: var(--text-against-pc);
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-weight: bold;
+}
+
+body.register .support-button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Tooltip */
+body.register .tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+body.register .tooltip-icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #3b3b3b;
+    color: white;
+    font-size: 9px;
+    line-height: 12px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 3px;
+    user-select: none;
+}
+
+body.register .tooltip-text {
+    width: 220px;
+    background-color: #333;
+    color: #ffffff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 6px;
+    position: absolute;
+    z-index: 5;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease;
+}
+
+body.register .tooltip-container:hover .tooltip-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.register .support-spinner {
+    border: 3px solid lightgray;
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+

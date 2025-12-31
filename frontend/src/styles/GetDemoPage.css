@@ -1,0 +1,108 @@
+body.getdemo {
+  font-family: 'Roboto', sans-serif;
+}
+
+.column {
+  float: left;
+  height: 100vh;
+}
+
+.left {
+  width: 52.5%;
+  /* background-image: linear-gradient(var(--primary-color), #db9976); */
+  background-image: linear-gradient(hsl(from var(--primary-color) h s l / 60%), hsl(from var(--primary-color) h s l / 20%));
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+}
+
+.right {
+  width: 47.5%;
+}
+
+.info-container {
+  transform: skewX(-7deg);
+}
+
+body.getdemo h1 {
+  text-align: center;
+  margin-top: 10;
+}
+
+.info-container-child {
+  margin-top: 50px;
+  margin-left: 10%;
+  margin-right: 10%;
+  transform: skewX(7deg);
+}
+
+body.getdemo td {
+  padding-right: 0.5rem;
+}
+
+body.getdemo input {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #828282;
+  border-radius: 4px;
+}
+
+body.getdemo .required::after {
+  content: " *";
+  color: red;
+}
+
+body.getdemo .flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+body.getdemo button {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background-color: white;
+  color: var(--primary-color);
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid var(--primary-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+  margin-top: 0.5rem;
+}
+
+body.getdemo button:hover{
+  background-color: var(--primary-color);
+  color: var(--text-against-pc);
+}
+
+body.getdemo .back-button {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 10;
+  margin: 0px;
+  padding: 9px;
+  padding-right: 12px;
+  padding-bottom: 12px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border 0.2s;
+  background-color: transparent;
+  color: black;
+  border: 1.5px solid transparent;
+  border-bottom-color: black;
+  border-right-color: black;
+  border-radius: 0px;
+  border-bottom-right-radius: 10px;
+}
+
+body.getdemo  .back-button:hover {
+  background-color: white;
+  color: var(--primary-color);
+  border: 1.5px solid white;
+}

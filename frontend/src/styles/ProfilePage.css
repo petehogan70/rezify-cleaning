@@ -1,0 +1,287 @@
+body.profile {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4; /* Light grey background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  left: 0;
+  right: 0;
+  color: #333; /* Dark gray for readability */
+  position: relative;
+}
+
+body.profile header {
+  background: white;
+  /*padding: 20px;*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  top: 0; /* Stick to the top */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+body.profile header h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--primary-aw);
+  margin: 0;
+}
+
+body.profile .top-header {
+  display: flex;
+  flex-wrap: wrap; /* Ensures no overlap */
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  width: 100%;
+  top: 0%;
+  box-sizing: border-box;
+  z-index: 11;
+}
+
+body.profile .top-links {
+  display: flex;
+  align-items: center;
+}
+
+body.profile .top-right-link,
+body.profile .login-button {
+  background-color: white;
+  margin-left: 20px;
+  color: var(--primary-aw);
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid var(--primary-aw);
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body.profile .top-right-link:hover,
+body.profile .login-button:hover {
+  background-color: var(--primary-aw);
+  color: white;
+}
+body.profile .top-right-link a {
+  color: var(--primary-aw); /* Change this to the desired orange color */
+}
+body.profile .top-right-link a:hover {
+  color: #ffffff; /* Change this to the desired orange color */
+}
+  
+body.profile .spinner {
+  border: 4px solid #f3f3f3; /* Light grey background */
+  border-top: 4px solid var(--primary-aw);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
+  /*margin: 20px auto; /* Center the spinner horizontally */
+}
+
+body.profile .upgrade-button {
+  background-color: var(--primary-aw);
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  box-shadow: 0 0px 12px var(--primary-aw);
+}
+
+body.profile .upgrade-button:hover {
+  background-color: var(--hover-color);
+}
+
+body.profile h2 {
+  margin: 0 0 20px 0;
+  color: #333;
+}
+body.profile input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+body.profile .update-button {
+  background-color: var(--primary-aw);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  width: 150px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Optional: Smooth transition */
+}
+body.profile .update-button:hover {
+  background-color: var(--hover-color);
+}
+
+body.profile .disabled-button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  cursor: default;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s; /* Optional: Smooth transition */
+}
+
+body.profile label .tooltip {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 0.4em;
+  white-space: nowrap;
+  z-index: 10;
+  /*top: 35px; /* Adjust the position below the element */
+  /*left: 50%;*/
+  /*transform: translateX(-8%)*/
+}
+body.profile label:hover .tooltip {
+  display: block;
+}
+
+body.profile a {
+  color: var(--primary-color);
+}
+
+body.profile .toggle-form {
+  color: var(--primary-color);
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  margin-top: 10px;
+  /*display: block;*/
+}
+
+body.profile .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body.profile .profile-container {
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+body.profile .profile-left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+body.profile .profile-left img {
+    width: 200px;
+}
+
+
+body.profile .change-resume-btn {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    margin: 10px;
+}
+
+body.profile .profile-right {
+    justify-content: center;
+    flex-grow: 1;
+    display: flex;
+}
+
+body.profile .profile-form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    text-align: center;
+    justify-content: center;
+}
+
+body.profile .college-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+body.profile .name-input {
+    display: flex;
+    flex-direction: row;
+}
+
+body.profile .update-profile-btn {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+
+    body.profile .top-header {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items */
+        transform: scale(0.9);
+    }
+
+    body.profile .top-header h1 {
+        font-size: 1.5em; /* Smaller font size for smaller screens */
+        margin-bottom: 1rem;
+    }
+
+    body.profile .top-header .profile-text {
+        font-size: 1.2em; /* Smaller font size for smaller screens */
+    }
+
+    body.profile .top-header .top-right-link {
+        font-size: 0.9em; /* Smaller font size for smaller screens */
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+    }
+
+    body.profile .top-links {
+      flex-wrap: wrap;
+    }
+
+    body.profile .profile-container {
+        margin: 20px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    body.profile .profile-left {
+        width: 100%;
+    }
+    body.profile .profile-left img {
+        width: 150px;
+    }
+
+    body.profile .profile-form {
+        width: 90%;
+    }
+
+}

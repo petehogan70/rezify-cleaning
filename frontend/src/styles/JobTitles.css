@@ -1,0 +1,581 @@
+body.results .fallback-logo {
+  width: 80px;
+  height: 80px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  background-color: var(--primary-color);
+  color: var(--text-against-pc);
+  font-size: 36px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+body.results .company-logo {
+  vertical-align: middle;
+  width: 80px;
+  height: 80px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  object-fit: contain;
+}
+
+body.results .inline-buttons-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+body.results .inline-buttons-container .sort-buttons,
+body.results .inline-buttons-container {
+  display: flex;
+  gap: 10px; /* Adjust gap between buttons */
+}
+body.results .inline-buttons-container label {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Adjust gap between label and input */
+  cursor: pointer;
+  position: relative; /* Ensure the tooltip is positioned relative to the label */
+}
+body.results .inline-buttons-container .tooltip,
+body.results .add-rec-container .tooltip {
+  position: absolute;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 0.8em;
+  white-space: nowrap;
+  z-index: 10;
+  top: 35px; /* Adjust the position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+  /* Tooltip is hidden initially */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease 0.5s, visibility 0s linear 0.5s;
+  /* ↑ 1.5s delay before fade-in starts */
+}
+body.results .inline-buttons-container label:hover .tooltip,
+body.results .add-rec-container label:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 1.5s; /* start showing after 1.5s */
+}
+
+body.results .refresh-jobs-container {
+  margin-left: auto;
+}
+body.results .refresh-button {
+  background-color: var(--primary-color);
+  color: var(--text-against-pc);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Optional: Smooth transition */
+}
+body.results .refresh-button:hover {
+  background-color: var(--hover-color);
+}
+
+body.results .disabled-refresh-button {
+  background-color: #555;
+  color: white;
+  padding: 10px 20px;
+  cursor: default;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s; /* Optional: Smooth transition */
+}
+
+/* Star and Checkbox */
+body.results .star-checkbox-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+body.results .star-checkbox-container .star {
+  content: '\f005'; /* Font Awesome star */
+  font-family: "Font Awesome 5 Free"; /* Font Awesome family */
+  font-weight: 900; /* Solid star */
+  color: white; /* White star */
+  -webkit-text-stroke: 1px var(--primary-color); /* outline */
+  cursor: pointer; /* Pointer cursor */
+  transform: translateY(-0.1rem);  /* Adjust vertical position */
+  background-color: transparent;
+  border-color: transparent;
+}
+body.results .star-checkbox-container .star.filled {
+  color: var(--primary-color); /* Filled star */
+  -webkit-text-stroke: 0; /* No outline for filled star */
+}
+body.results .star-checkbox-container input[type="checkbox"] {
+  cursor: pointer;
+}
+body.results .star-checkbox-container input[type="checkbox"] {
+  appearance: none; /* Remove default styling */
+  width: 15px; /* Width of the checkbox */
+  height: 15px; /* Height of the checkbox */
+  border: 2px solid #000; /* Border color to match the theme */
+  border-radius: 3px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  position: relative; /* Position relative for the checkmark */
+  transform: translateX(-.2rem);
+}
+
+body.results .star-checkbox-container input[type="checkbox"]:checked {
+  background-color: #000; /* Black background when checked */
+  border: 2px solid #000; /* Black border when checked */
+}
+
+body.results .star-checkbox-container input[type="checkbox"]:checked::after {
+  content: ''; /* Empty content for the checkmark */
+  position: absolute; /* Absolute positioning */
+  top: 40%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  width: 3px; /* Width of the checkmark */
+  height: 8px; /* Height of the checkmark */
+  border: solid white; /* White color for the checkmark */
+  border-width: 0 2px 2px 0; /* Width and positioning of the checkmark */
+  transform: translate(-50%, -50%) rotate(45deg); /* Rotate to create the checkmark shape */
+}
+
+body.results .star-checkbox-container .remove-x {
+  display: flex;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: black;
+  background-color: transparent;
+  border-color: transparent;
+  font-weight: bold;
+  font-family: monospace;
+  line-height: 0.9rem; /* prevents extra vertical spacing */
+  width: 0.9rem;
+  height: 1.2rem;
+  align-items: center;       /* vertical centering */
+  justify-content: center;   /* horizontal centering */
+  transform: translateY(-0.2rem);  /* Adjust vertical position */
+}
+
+body.results .star-checkbox-container .tooltip {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 0.8em;
+  white-space: nowrap;
+  z-index: 10;
+  top: 25px; /* Adjust the position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+body.results .star-checkbox-container .star:hover + .tooltip,
+body.results .star-checkbox-container input[type="checkbox"]:hover + .tooltip,
+body.results .star-checkbox-container .remove-x:hover + .tooltip {
+  display: block;
+}
+
+body.results .logo-title-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* spacing between logo and title */
+  margin-bottom: 10px;
+}
+
+body.results .job-title {
+  margin: 0;
+  font-size: 1.6em;
+  color: #333;
+  flex: 1; /* Optional: allows title to take remaining space */
+}
+body.results .job-card p {
+  margin: 10px 0;
+  color: #444; /* Lighter text color */
+}
+body.results .job-card a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.1em;
+}
+body.results .job-card a.underlined-link {
+  color: #666;
+  text-decoration: underline; /* Add underline */
+}
+body.results .job-card .more-link {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+body.results .job-card .full-description {
+  display: none;
+}
+body.results .company-name {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+body.results .full-description {
+  margin-top: 10px;
+}
+
+body.results .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+body.results .modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+body.results .modal-content h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+body.results .modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+body.results .modal-buttons button {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+body.results .submit-btn {
+  background-color: var(--primary-color);
+  color: var(--text-against-pc);
+  border: none;
+}
+
+body.results .submit-btn:hover {
+  background-color: var(--hover-color);
+}
+
+body.results .cancel-btn {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+body.results .cancel-btn:hover {
+  background-color: #f2f2f2;
+}
+
+body.results .outreach-section {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+body.results .outreach-section.no-border {
+  border-top: none !important;
+  padding-top: 5px;
+  margin-top: 0;
+}
+
+body.results .outreach-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+body.results .outreach-btn {
+  background: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+body.results .outreach-btn:hover {
+  background: var(--primary-color);
+  color: var(--text-against-pc);
+  transform: translateY(-1px);
+}
+
+body.results .outreach-btn:active {
+  transform: translateY(0);
+}
+
+.outreach-btn.copilot-btn.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(100%);
+  pointer-events: none; /* prevents click + hover */
+}
+
+body.results .copilot-btn-container .tooltip {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 0.6em;
+  white-space: nowrap;
+  z-index: 10;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+body.results .copilot-btn-container:hover .tooltip {
+  display: block;
+}
+
+body.results .recently-posted-badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+}
+
+body.results .job-status-container {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 12px;
+}
+
+
+body.results .job-status-container p {
+  text-align: center;
+  width: 100%;
+}
+
+body.results .job-status-pills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 4px;
+}
+
+body.results .status-pill {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--primary-color, #444);
+  background: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+body.results .status-pill:hover {
+  background: color-mix(in srgb, var(--primary-color) 15%, white);
+  border-color: var(--primary-color);
+}
+
+body.results .status-pill.is-selected {
+  background: var(--primary-color);
+  color: var(--text-against-pc);
+  border-color: var(--primary-color);
+}
+
+body.results .status-pill {
+  transition: background 0.20s ease, color 0.20s ease, border-color 0.20s ease;
+}
+
+body.results .job-notes-container {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  padding-top: 12px;
+  border-top: 1px solid #e0e0e0;
+}
+
+body.results .job-notes-label {
+  font-weight: 600;
+  text-align: center; /* or center if you prefer */
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+body.results .job-notes-textarea {
+  width: 100%;
+  min-height: 70px;
+  resize: vertical;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+body.results .job-notes-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.results .job-notes-counter {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+body.results .job-notes-save-button {
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+body.results .job-notes-save-button:hover {
+  background: color-mix(in srgb, var(--primary-color) 85%, white);
+}
+
+body.results .job-notes-save-button:active {
+  transform: scale(0.97);
+}
+
+
+body.results .notes-status {
+  font-size: 0.82rem;
+  margin-left: 8px;
+}
+
+body.results .notes-status.unsaved {
+  color: gray;
+  font-style: italic;
+}
+
+body.results .notes-status.saved {
+  color: black;
+  font-weight: 600;
+}
+
+body.results .applied-status-filter {
+  margin: 12px 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+}
+
+body.results .applied-status-filter-label {
+  margin-right: 4px;
+}
+
+body.results .applied-status-filter-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9rem;
+}
+
+body.results .applied-status-filter-item input[type="checkbox"] {
+  appearance: none;         /* Remove default checkbox UI */
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--primary-color);   /* Or var(--primary-color) if you want */
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* When checked: filled box */
+body.results .applied-status-filter-item input[type="checkbox"]:checked {
+  background-color: var(--primary-color);   /* Or var(--primary-color) */
+  border-color: var(--primary-color);       /* Keep border matching */
+}
+
+body.results .applied-status-filter-item input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 3px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+@media (max-width: 768px) {
+    body.results .inline-buttons-container {
+      font-size: 0.8rem;;
+    }
+
+    body.results .inline-buttons-container .refresh-jobs-container span {
+      display: none; /* Hide the text on smaller screens */
+    }
+
+    body.results .recently-posted-badge {
+        display: none; /* Hide the badge on smaller screens */
+    }
+
+    body.results .logo-title-container {
+      display: flex;
+      align-items: center;
+      gap: 20px; /* spacing between logo and title */
+      margin-bottom: 10px;
+    }
+
+    body.results .job-title {
+      margin: 0;
+      font-size: 1em;
+    }
+
+    body.results .company-logo {
+      vertical-align: middle;
+      width: 60px;
+      height: 60px;
+      margin-left: 5px;
+      margin-bottom: 10px;
+    }
+
+}
+
