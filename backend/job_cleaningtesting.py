@@ -756,7 +756,7 @@ def check_single_link(final_url, timeout=60):
         # --------------------------------------------------
 
         # 1: Workday handling
-        if 'workdayjobs' in url:
+        if 'workdayjobs' in url or 'workdaysite':
             expired, reason = is_workday_job_expired(url, timeout=timeout)
             result["used"] = "workday"
 
@@ -1254,7 +1254,7 @@ if __name__ == "__main__":
             'https://jobs.dayforcehcm.com/en-US/pca/CANDIDATEPORTAL/jobs/51361?src=LinkedIn'
         ]
     '''
-    # url = 'https://www.paycomonline.net/v4/ats/web.php/jobs/ViewJobDetails?clientkey=8CEA2D4873AD169B8A3905A681FB7CE6&job=159518&source=Indeed'
+    # url = 'https://wd1.myworkdaysite.com/recruiting/avnet/External/job/Chandler-Arizona-United-States-Of-America/Business-Analyst-Intern_JR-020726?source=LinkedIn'
     # print(check_single_link(url, timeout=20))
 
     test_links = get_links(limit=500)
